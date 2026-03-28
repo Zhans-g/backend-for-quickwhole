@@ -27,7 +27,7 @@ exports.createOrderLink = async (req, res) => {
 
         message += `\n💰 *ИТОГО К ОПЛАТЕ: ${totalPrice.toLocaleString()} ₸*`;
 
-        const adminPhone = "77078135707";
+        const adminPhone = "7707XXXXXXX";
         const whatsappUrl = `https://wa.me/${adminPhone}?text=${encodeURIComponent(message)}`;
 
         res.json({ url: whatsappUrl, orderId: newOrder._id });
