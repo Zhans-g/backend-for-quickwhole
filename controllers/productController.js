@@ -30,3 +30,12 @@ exports.createProduct = async (req, res) => {
         res.status(500).json({ msg: "Ошибка при создании товара" });
     }
 };
+
+exports.deleteProduct = async (req, res) => {
+    try {
+        await Product.findByIdAndDelete(req.params.id);
+        res.json({ msg: "Товар удален" });
+    } catch (err) {
+        res.status(500).json({ msg: "Ошибка сервера" });
+    }
+};
